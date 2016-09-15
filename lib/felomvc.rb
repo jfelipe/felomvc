@@ -1,6 +1,7 @@
 require "felomvc/version"
 require "felomvc/controller.rb"
 require "felomvc/utils.rb"
+require "felomvc/dependencies.rb"
 
 module Felomvc
 
