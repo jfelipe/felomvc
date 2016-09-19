@@ -25,10 +25,10 @@ module Felomvc
       # env["PATH_INFO"] = "/pages/about" => PagesController.send(:about)
       controller_class, action = get_controller_and_action(env)
 
-      #with the controller name and the action, this line sends the action to the controller name
-      response = controller_class.new.send(action)
+      controller = controller_class.new(env)
 
-      [200, {"Content-Type" => "text/html"}, [response]]
+      #with the controller name and the action, this line sends the action to the controller name
+      response = controller.send(action)
     end
 
     def get_controller_and_action(env)
